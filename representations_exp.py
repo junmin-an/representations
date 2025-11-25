@@ -54,7 +54,7 @@ for x in [left_x, right_x]:
 random.shuffle(stim_pos)
 
 for i in range(n):
-    new_pic = expyriment.stimuli.Picture(f"/Users/junminan/Desktop/Master/M2/representations/stimuli/hat{i+1}.png", position=stim_pos[i])
+    new_pic = expyriment.stimuli.Picture(f"stimuli/hat{i+1}.png", position=stim_pos[i])
     stim_dict[i+1] = new_pic
 
 for s in stim_dict.values():
@@ -73,8 +73,8 @@ for i in range(n):
         position_ij = [(-400,0),(400,0)]
         random.shuffle(position_ij)
 
-        pic1 = expyriment.stimuli.Picture(f"/Users/junminan/Desktop/Master/M2/representations/stimuli/hat{i+1}.png", position=position_ij[0])
-        pic2 = expyriment.stimuli.Picture(f"/Users/junminan/Desktop/Master/M2/representations/stimuli/hat{j+1}.png", position=position_ij[1])
+        pic1 = expyriment.stimuli.Picture(f"stimuli/hat{i+1}.png", position=position_ij[0])
+        pic2 = expyriment.stimuli.Picture(f"stimuli/hat{j+1}.png", position=position_ij[1])
 
         pic1.scale(3)
         pic2.scale(3)
