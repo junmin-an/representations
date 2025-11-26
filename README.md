@@ -13,3 +13,5 @@ At the end of the experiment, it will generate a **data** folder with an **xpd**
 Make sure that the the **python code** file and the **stimuli** folder from the github are all in the same folder.
 
 Thank you so much for your help. <3
+
+PS: if a key press doesn't work, try to press SPACE and then press the key again. 
