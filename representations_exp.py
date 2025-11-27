@@ -7,7 +7,7 @@ WHITE = (255,255,255)
 BLACK = (0,0,0)
 
 exp = expyriment.design.Experiment(name="Representations",
-                                   text_size = 30, 
+                                   text_size = 43, 
                                    background_colour = WHITE) 
 
 #expyriment.control.set_develop_mode(on=True)  ## Set develop mode. Comment for real experiment
@@ -77,15 +77,15 @@ for i in range(n):
         pic1 = expyriment.stimuli.Picture(f"stimuli/hat{i+1}.png", position=position_ij[0])
         pic2 = expyriment.stimuli.Picture(f"stimuli/hat{j+1}.png", position=position_ij[1])
 
-        pic1.scale(1.8)
-        pic2.scale(1.8)
+        pic1.scale(3)
+        pic2.scale(3)
         pic1.plot(stim)
         pic2.plot(stim)
 
         txt = expyriment.stimuli.TextLine(
             "How visually similar are these two hats?",
             text_colour=(0,0,0),
-            text_size = 25,
+            text_size = 40,
             position=(0, 250)
         )
         txt.plot(stim)
@@ -93,7 +93,7 @@ for i in range(n):
         txt2 = expyriment.stimuli.TextLine(
             "1----2----3----4----5----6----7----8----9",
             text_colour=(0,0,0),
-            text_size = 30,
+            text_size = 45,
             position=(0, -250)
         )
         txt2.plot(stim)
@@ -101,7 +101,7 @@ for i in range(n):
         txt3 = expyriment.stimuli.TextLine(
             f"1-very dissimilar                  5-moderately similar                  9-very similar",
             text_colour=(0,0,0),
-            text_size = 25,
+            text_size = 40,
             position=(0, -350)
         )
         txt3.plot(stim)
