@@ -7,7 +7,7 @@ WHITE = (255,255,255)
 BLACK = (0,0,0)
 
 exp = expyriment.design.Experiment(name="Representations",
-                                   text_size = 43, 
+                                   text_size = 30, 
                                    background_colour = WHITE) 
 
 #expyriment.control.set_develop_mode(on=True)  ## Set develop mode. Comment for real experiment
