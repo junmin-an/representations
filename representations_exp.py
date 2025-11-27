@@ -14,6 +14,7 @@ exp = expyriment.design.Experiment(name="Representations",
 expyriment.io.defaults.outputfile_time_stamp = False ## Remove timestamp from output file
 
 expyriment.control.initialize(exp)
+kb = expyriment.io.Keyboard()
 exp.data_variable_names = ["block", "image1", "image2", "diss_rating", "image", "x_pos", "y_pos"]
 
 n = 16 ## Number of stimuli
@@ -140,21 +141,21 @@ random.shuffle(methods)
 for method in methods:
     if method == "p":
         instructions_pairwise.present()
-        exp.keyboard.wait_char(' ')
+        kb.wait_char(' ')
         for trial in block_pairwise.trials:
             blankscreen.present()
             exp.clock.wait(500)
             cue.present()
             exp.clock.wait(500)
             trial.stimuli[0].present()
-            key, rt = exp.keyboard.wait_char(["1","2","3","4","5","6","7","8","9"])
+            key, rt = kb.wait_char(["1","2","3","4","5","6","7","8","9"])
             rating = int(key)
             i = trial.get_factor("i")
             j = trial.get_factor("j")
             exp.data.add(["pairwise", int(i), int(j), int(10-rating), None, None, None])
     else:
         instruction_arrangement.present()
-        exp.keyboard.wait_char(' ')
+        kb.wait_char(' ')
         mouse = expyriment.io.Mouse()
         mouse.show_cursor(True)
         dragging = (False, None, None)
@@ -195,9 +196,9 @@ for method in methods:
                 dragging = (False, None, None)
                 offset = (0,0)
 
-            if exp.keyboard.check(expyriment.misc.constants.K_SPACE):
+            if kb.check(expyriment.misc.constants.K_SPACE):
                 are_you_sure_message.present()
-                key, rt = exp.keyboard.wait_char(["y","n"])
+                key, rt = kb.wait_char(["y","n"])
                 if key == "y" or key == "Y":
                     finished = True
                 elif key == "n" or key == "N":
